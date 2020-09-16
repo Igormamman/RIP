@@ -1,0 +1,17 @@
+import urllib3
+from lab_python_oop.Circle import Circle
+from lab_python_oop.Rectangle import Rectangle
+from lab_python_oop.Square import Square
+
+
+def main():
+    print("\n"+urllib3.__version__)
+    cir=Circle(4,"Зеленый")
+    rec=Rectangle(4,6,"Синий")
+    sqr=Square(4,"Красный")
+
+    print(rec,cir,sqr)
+
+
+if __name__=="__main__":
+    main()
