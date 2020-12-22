@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Detail</title>
+		<style>
+			.tb {
+			  border-collapse: collapse;
+			}
+			.tb *> th,table *>td{
+				border:1px solid black;
+				text-align: center;
+			}	
+		</style>
+	</head>
+	<body>
+		<a href="{%url 'master'%}">На главную</a>
+		<h1>{{browser.name}}</h1>
+		<table class=.tb>
+			<tr>
+				<th>County</th>
+				<th>Url</th>
+				<th>Логотип</th>
+			</tr>
+			<tr>
+				<td>{{browser.country}}</td>
+				<td><a href="http://www.{{browser.site_url}}">{{browser.site_url}}</td>
+				{% load static %}
+				{% with 'Lab8App/'|add:browser.img as image_static %}
+				<td><img src="{% static image_static%}" style="width:100px"></img></tr>			
+				{% endwith%}				
+				</tr>
+		</table>
+	</body>
+</html>
